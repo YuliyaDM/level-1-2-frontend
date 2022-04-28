@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test number eighteen</title>
+    <style>
+        form{
+            margin: 50px;
+        }
+        .dragleave{
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(45deg, rgb(103, 103, 202), rgb(202, 112, 112));
+            padding: 10px 30px;
+            border: 2px solid blanchedalmond;
+        }
+        .dragleave::after{
+            background: white;
+            opacity: .5;
+            content: "";
+            position: absolute;
+            left: -150px;
+            height: 180px;
+            top: -50px;
+            width: 50px;
+            transform: rotate(45deg);
+            transition: all 2.5s ease 0s;
+        }
+        .dragleave:hover::after{
+            left: 110%;
+        }
+        .dragover{
+            padding: 10px 30px;
+            background: rgb(100, 100, 236);
+            border: 2px solid rgb(68, 68, 136);
+            animation: animate 6s ease-in-out 1;
+        }
+        @keyframes animate{
+            0%{
+                transform: rotate(0deg) scale(1);
+            }
+            10%{
+                transform: rotate(5deg) scale(1.1);
+            }
+            20%{
+                transform: rotate(-5deg) scale(.75);
+            }
+            30%{
+                transform: rotate(5deg) scale(1.1);
+            }
+            40%{
+                transform: rotate(-5deg) scale(.75);
+            }
+            50%{
+                transform: rotate(5deg) scale(1.1);
+            }
+            60%{
+                transform: rotate(-5deg) scale(.75);
+            }
+            70%{
+                transform: rotate(5deg) scale(1.1);
+            }
+            80%{
+                transform: rotate(-5deg) scale(.75);
+            }
+            90%{
+                transform: rotate(5deg) scale(1.1);
+            }
+            100%{
+                transform: rotate(0deg) scale(1);
+            }
+        }
+        .drop{
+            cursor: pointer;
+            overflow: hidden;
+            background: rgb(120, 182, 27);
+            padding: 10px 30px;
+            border: 2px solid rgb(55, 139, 55);
+            box-shadow: 10px 10px 1px rgb(77, 77, 77);
+        }
+        .drop::after{
+            left: -100%;
+            top: 0;
+            position: absolute;
+            content: '';
+            width: 200px;
+            height: 20%;
+            background: rgba(255,255,255,.5);
+            transform: skew(45deg);
+            transition: all 2.5s ease 0s;
+
+        }
+        .drop:hover::after{
+            left: 50%;
+        }
+        img{
+            display: block;
+            margin-top: 10px;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form">
+        <input type="file" id="value">
+    </form>
+    <img src="https://html-plus.in.ua/wp-content/uploads/2022/01/drag-n-drop-js.png" alt="">
+    <script>
+        document.getElementById('value').addEventListener('dragleave', function(){
+            document.getElementById('value').classList.remove('dragover');
+            document.getElementById('value').classList.add('dragleave')
+        })
+        document.getElementById('value').addEventListener('drop', function(){
+            document.getElementById('value').classList.remove('dragleave');
+            document.getElementById('value').classList.remove('dragover');
+            document.getElementById('value').classList.add('drop')
+        })
+        document.getElementById('value').addEventListener('dragover', function(){
+            document.getElementById('value').classList.remove('drop');
+            document.getElementById('value').classList.remove('dragleave');
+            document.getElementById('value').classList.add('dragover');
+        })
+    </script>
+</body>
+</html>

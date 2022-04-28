@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test number seven</title>
+    <style>
+        #rectangle{
+            width: 50px;
+            height: 20px;
+            background: green;
+            margin-bottom: 20px;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="rectangle"></div>
+    <form name="" onclick="fun()">
+        <input type="text" name="" oninput="fun2()">
+    </form>
+    <script>
+        function fun(){
+            document.getElementById('rectangle').style.visibility = 'visible'
+        }
+        function fun2(){
+            document.getElementById('rectangle').style.visibility = 'hidden';
+        }
+        function fun3(){
+            document.getElementById('rectangle').style.visibility = 'hidden';
+        }
+    </script>
+</body>
+</html>

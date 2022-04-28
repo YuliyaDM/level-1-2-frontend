@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test number seventeen</title>
+    <style>
+        *, *::after, *::before{
+            margin: 0;
+            border: 0;
+            padding: 0;
+            outline: 0;
+            box-sizing: border-box;
+        }
+        html, body{
+            width: 100%;
+            height:100%;
+            font-family: sans-serif;
+            display: flex;
+        }
+        p, h1, h2, h3, h4, h5, h6{
+            font-family: inherit;
+        }
+        #phone{
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        #modal-window{
+            color: white;
+            width: 50%;
+            height: 50%;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            letter-spacing: 5px;
+            font-size: 20px;
+            text-decoration: underline;
+        }
+        #cross{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        #cross::after{
+            position:absolute;
+            content: "";
+            height: 50%;
+            width: 5px;
+            background: black;
+            transform: rotate(-45deg);
+        }
+        #cross::before{
+            position:absolute;
+            content: "";
+            height: 50%;
+            width: 5px;
+            background: black;
+            transform: rotate(45deg);
+        }
+        #showButton{
+            cursor: pointer;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 150px;
+            height: 50px;
+            border: 2px solid black;
+        }
+        img{
+            width: 450px;
+            height: 250px;
+            position: absolute;
+            top: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="phone">
+        <div id="modal-window">
+            <h1>Hello!</h1>
+            <button onclick="closemodal()" id="cross"></button>
+        </div>
+    </div>
+    <button  id="showButton" onclick="showTheModalWindow()">Want to see a modal window, don't ya?</button>
+    <img src="https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/TNC_PC2021_450b6776aee8195158c113bac7b342a0-original.jpg?crop=0,26,4000,2200&wid=4000&hei=2200&scl=1.0" alt="">
+    <script>
+        function closemodal(){
+            document.getElementById('phone').style.display = 'none';
+            document.getElementById('showButton').style.display = 'block';
+            document.body.style.overflow = 'scroll'
+        }
+        function showTheModalWindow(){
+            document.getElementById('phone').style.display = 'flex';
+            document.getElementById('showButton').style.display = 'none';
+            document.body.style.overflow = 'hidden';
+        }
+    </script>
+</body>
+</html>

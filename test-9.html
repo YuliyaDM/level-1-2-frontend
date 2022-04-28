@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test number nine</title>
+</head>
+<body>
+    <form name="form">
+        <textarea name="textarea" id="textarea"></textarea>
+    </form>
+    <button id="submit">Submit</button>
+    <div id="div"></div>
+    <script>
+        document.getElementById('submit').addEventListener('click', function(){
+            let value = document.forms['form']['textarea'].value;
+            console.log(value.split('\n'))
+            for (let i = 0; i < value.split('\n').length; i++){
+                document.getElementById('div').innerHTML += `<img src='${value.split('\n')[i]}' />`;
+            }
+        })
+    </script>
+</body>
+</html>

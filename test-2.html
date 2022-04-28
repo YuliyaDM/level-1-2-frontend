@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test number 2</title>
+    <style>
+        #square{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="square"></div>   
+    <button onclick="hideOrShowM1()">Hide or Show the element (method 1)</button> 
+    <button onclick="hideOrShowM2()">Hide or Show the element (method 2)</button>
+    <script>
+        let zero = 0;
+        function hideOrShowM1(){
+            if (zero % 2 == 0){
+                document.getElementById('square').style.visibility = "hidden";
+            }
+            else{
+                document.getElementById('square').style.visibility = "visible";
+            }
+            zero++
+        }
+        function hideOrShowM2(){
+            if (document.getElementById('square').style.visibility == 'hidden'){
+                document.getElementById('square').style.visibility = 'visible';
+            }
+            else{
+                document.getElementById('square').style.visibility = 'hidden';
+            }
+        }
+    </script> 
+</body>
+</html>
